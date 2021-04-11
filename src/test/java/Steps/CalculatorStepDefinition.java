@@ -11,6 +11,8 @@ public class CalculatorStepDefinition {
     private Calculator calculator;
     int firstNum;
     int secondNum;
+    String opType;
+
 
     @Given("calculator app is up and running")
     public void startCalculator() {
@@ -30,9 +32,18 @@ public class CalculatorStepDefinition {
         System.out.println("The second number received is " + secondNum);
     }
 
+    @And("op_type equals {string}")
+    public void op_typeEquals(String type) {
+        opType = type;
+        System.out.println("Operation type is \"" + type + "\"");
+    }
+
     @Then("result equals {int}")
     public void resultEquals(int expectedResult) {
-        int actualResult = calculator.addTwoNum(firstNum, secondNum);
+        int actualResult = calculator.calculate(firstNum, secondNum, opType);
+        System.out.println("Result is " + actualResult);
         Assertions.assertEquals(expectedResult, actualResult);
     }
+
+
 }
