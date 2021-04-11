@@ -21,3 +21,6 @@ Feature: calculator addition, subtraction, division, multiplying tests
       | 105  | 15    | "-"   | 90             |
       | 71   | 230   | "*"   | 16330          |
       | -60  | 12    | "/"   | -5             |
+      | 50   | 0     | "/"   | -1             |
+      | 13   | 0     | "*"   | 0              |
+
