@@ -5,14 +5,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.*;
 
-public class CalculatorStepDefinition {
+public class CalculatorStepsDefinition {
     private Calculator calculator;
     int firstNum;
     int secondNum;
     String opType;
-
 
     @Given("calculator app is up and running")
     public void startCalculator() {
@@ -35,7 +34,7 @@ public class CalculatorStepDefinition {
     @And("op_type equals {string}")
     public void op_typeEquals(String type) {
         opType = type;
-        System.out.println("Operation type is \"" + type + "\"");
+        System.out.println("Operation type is " + type);
     }
 
     @Then("result equals {int}")
@@ -44,6 +43,4 @@ public class CalculatorStepDefinition {
         System.out.println("Result is " + actualResult);
         Assertions.assertEquals(expectedResult, actualResult);
     }
-
-
 }
